@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotify - Explore Music</title>
+  <style>
+    body {
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+  <h1>Explore Music on Spotify</h1>
+  <p>Select your preferred music genre:</p>
+
+  <form id="genreForm">
+    <select name="genre" id="genreSelect">
+      <option value="">Select Genre</option>
+      <option value="punjabi">Punjabi</option>
+      <option value="english">English</option>
+      <option value="hindi">Hindi</option>
+    </select>
+    <button type="submit">Explore Now</button>
+    <button type="button" onclick="window.location.href='index.html'" >Back to home</button>
+  </form>
+
+  <script>
+    const genreForm = document.getElementById('genreForm');
+    genreForm.addEventListener('submit', (event) => {
+      event.preventDefault(); // Prevent default form submission
+
+      const selectedGenre = document.getElementById('genreSelect').value;
+      
+      if (selectedGenre === 'punjabi') {
+        window.location.href = "punjabi.html"; 
+      } else if (selectedGenre === 'english') {
+        window.location.href = "english.html"; 
+      } else if (selectedGenre === 'hindi') {
+        window.location.href = "hindi.html"; 
+      }
+    });
+  </script>
+</body>
+</html>

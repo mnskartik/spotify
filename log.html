@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Login</title>
+  <script>
+    function validateLogin() {
+      const usernameInput = document.getElementById("username");
+      const passwordInput = document.getElementById("password");
+      const username = usernameInput.value;
+      const password = passwordInput.value;
+
+      
+      const validUsername = "kartik";
+      const validPassword = "monster007"; 
+
+      
+      if (username === "" || password === "") {
+        alert("Username and password cannot be empty!");
+        return false;
+      }
+
+      
+      if (username !== validUsername || password !== validPassword) {
+        alert("Invalid username or password. Please try again.");
+        usernameInput.value = ""; 
+        passwordInput.value = ""; 
+        return false;
+      }
+
+      
+      alert("Login successful! Redirecting...");
+      window.location.href = "index.html"; 
+
+      return true;
+    }
+  </script>
+  <style>
+    body {
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+  <h1>Login</h1>
+  <form onsubmit="return validateLogin()">
+    <table>
+      <tr>
+        <th>Username</th>
+        <td><input type="text" id="username" name="username" required></td>
+      </tr>
+      <tr>
+        <th>Password</th>
+        <td><input type="password" id="password" name="password" required></td>
+      </tr>
+    </table>
+    <button type="submit">Login</button>
+    <button type="button" onclick="window.location.href='index.html'" >Back to home</button>
+  </form>
+</body>
+</html>
